@@ -1,0 +1,62 @@
+// example .notice with variations.  Also uses placeholders and mixins for code conciseness + extensibility
+//(../patterns/_notice.scss)
+@import '../functions/import-once';
+@if import-once( 'patterns/notice' ) {
+    %notice {
+        border: 2px solid black;
+        background-color: #eee;
+        color: #333;
+    }
+}
+
+@mixin notice() {
+    @extend %notice;
+    // future parameter logic can go here
+}
+
+//(../patterns/_warning.scss)
+@import '../functions/import-once';
+@import 'notice';
+@if import-once( 'patterns/warning' ) {
+    %warning {
+        @include notice;
+        background-color: #ffeb64;
+        font-weight: bold;
+    }
+}
+
+@mixin warning() {
+    @extend %warning;
+    // future parameter logic can go here
+}
+
+//(../modules/_notice)
+.notice {
+    @include notice;
+}
+
+//(../modules/_warning)
+.warning {
+    @include warning;
+}
+
+//(../stylesheet.scss)
+@import 'modules/notice';
+@import 'modules/warning';
+
+/*
+    OUTPUT:
+
+    .notice,
+    .warning {
+        border: 2px solid black;
+        background-color: #eee;
+        color: #333;
+    }
+
+    .warning {
+        background-color: #ffeb64;
+        font-weight: bold;
+    }
+*/
+

@@ -1,0 +1,7 @@
+// base files only alter actual HTML elements.  NO CLASSES HERE (See ../modules)
+//(_p.scss)
+@import '../variables';
+p {
+    margin: 0 0 1em;
+    color: $text-color;
+}

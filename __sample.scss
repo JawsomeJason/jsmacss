@@ -1,0 +1,9 @@
+// example SCSS file that imports all sub-files
+
+// THIS ORDER IS VERY IMPORTANT!
+@import 'patterns/all'; // patterns always first
+
+@import 'base/all';
+@import 'layout/all';
+@import 'modules/all';
+@import 'themes/all';

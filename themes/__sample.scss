@@ -1,0 +1,16 @@
+// Example: Holiday-themed header
+//(layout/_header.scss)
+.header {
+    width: 100%;
+    height: 500px;
+    background: image-url( 'header-background' ) center center no-repeat #fff;
+}
+
+//(themes/_holiday.scss)
+.header {
+    background-image: image-url('christmas-snow.png');
+}
+
+//(stylesheet.scss)
+@import 'layout/header';
+@import 'themes/holiday';

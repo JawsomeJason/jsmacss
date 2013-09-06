@@ -1,0 +1,45 @@
+@import '../functions/import-once';
+
+@if import-once( 'patterns/sample' ) {
+    // placeholder for static CSS
+    // ONLY USE THIS INSIDE MIXINS
+    %half-width-and-centered {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+// logic/parameter-driven CSS.
+// ALWAYS USE THIS IN SCSS FILES
+@mixin half-width-and-centered( $background-color: false ) {
+    // static, reusable part
+    @extend %half-width-and-centered;
+
+    // custom logic
+    @if $background-color != 'false' {
+        background-color: $background-color;
+    }
+}
+
+/*
+// **** USAGE ****
+    @import 'patterns/sample'
+    .cart {
+        @include half-width-and-centered;
+    }
+
+    .button {
+        @include half-width-and-centered( orange );
+    }
+
+// **** OUTPUT ****
+    .cart,
+    .button {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .button {
+        background-color: orange;
+    }
+*/
