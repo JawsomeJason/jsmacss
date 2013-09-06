@@ -1,6 +1,6 @@
 # J-SMACSS: JFeatherz' SMACSS Framework
 
-This SCSS + SMACSS framework is pretty complex. But each folder explains what goes in what.  Of particular note, check out @patterns/README.md@ and @modules/README.md@ for interesting best practices when using SCSS in an Object-Oriented way.  
+This SCSS + SMACSS framework is pretty complex. But each folder explains what goes in what.  Of particular note, check out `patterns/README.md` and `modules/README.md` for interesting best practices when using SCSS in an Object-Oriented way.  
 
 Also, check out the __sample.scss files located in each directory, including this one!
 
